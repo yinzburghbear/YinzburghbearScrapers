@@ -1,0 +1,9 @@
+id: AdultEmpire
+name: AdultEmpire
+metadata: {}
+version: "8119079"
+date: "2024-12-27 00:25:57"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- AdultEmpire.yml

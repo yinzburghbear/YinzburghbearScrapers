@@ -1,0 +1,9 @@
+id: IMDB
+name: IMDB
+metadata: {}
+version: be01361
+date: "2024-03-28 11:48:19"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- IMDB.yml

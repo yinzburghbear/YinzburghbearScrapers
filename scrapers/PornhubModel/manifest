@@ -1,0 +1,9 @@
+id: PornhubModel
+name: PornhubModel
+metadata: {}
+version: 558972b
+date: "2024-12-18 21:22:00"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- PornhubModel.yml

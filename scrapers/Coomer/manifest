@@ -1,0 +1,10 @@
+id: Coomer
+name: Coomer
+metadata: {}
+version: f33f57f
+date: "2025-01-08 14:16:06"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- Coomer.py
+- Coomer.yml

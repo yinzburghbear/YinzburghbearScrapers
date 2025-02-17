@@ -1,0 +1,9 @@
+id: WikiData
+name: Wikidata
+metadata: {}
+version: 96698c0
+date: "2024-02-07 09:29:00"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- WikiData.yml

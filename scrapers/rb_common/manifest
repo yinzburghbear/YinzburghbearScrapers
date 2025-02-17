@@ -1,0 +1,18 @@
+id: rb_common
+name: rb_common
+metadata: {}
+version: 39ff3d5
+date: "2023-11-22 00:08:53"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- graphql\stash.rb
+- graphql\graphql_base.rb
+- graphql\README.md
+- configs\config_base.rb
+- configs\stashdb_config.rb
+- configs\stash_config.rb
+- configs\README.md
+- logger.rb
+- README.md
+- rb_common.rb

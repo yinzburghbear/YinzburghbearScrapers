@@ -1,0 +1,10 @@
+id: GEVI
+name: GEVI
+metadata: {}
+version: 3469fdd
+date: "2024-03-13 13:20:08"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- GEVI.yml
+- GEVI.py

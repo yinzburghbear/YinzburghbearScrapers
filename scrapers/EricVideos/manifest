@@ -1,0 +1,9 @@
+id: EricVideos
+name: EricVideos
+metadata: {}
+version: af406e8
+date: "2025-02-10 21:41:34"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- EricVideos.yml

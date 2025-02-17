@@ -1,0 +1,9 @@
+id: CockyBoys
+name: CockyBoys
+metadata: {}
+version: f077d6c
+date: "2024-09-20 11:59:31"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- CockyBoys.yml

@@ -1,0 +1,10 @@
+id: GayWire
+name: Gay Wire
+metadata: {}
+version: a97a0ee
+date: "2025-01-11 18:58:39"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- GayWire.py
+- GayWire.yml

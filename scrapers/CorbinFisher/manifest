@@ -1,0 +1,9 @@
+id: CorbinFisher
+name: Corbin Fisher
+metadata: {}
+version: a69726e
+date: "2025-01-18 22:03:12"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- CorbinFisher.yml

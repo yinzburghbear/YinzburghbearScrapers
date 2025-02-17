@@ -1,0 +1,9 @@
+id: CarnalPlus
+name: Carnal+ / FTM+
+metadata: {}
+version: e237016
+date: "2024-03-25 01:41:58"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- CarnalPlus.yml

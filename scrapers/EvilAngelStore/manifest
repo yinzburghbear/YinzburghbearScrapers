@@ -1,0 +1,9 @@
+id: EvilAngelStore
+name: Evil Angel Store
+metadata: {}
+version: 5fc9275
+date: "2024-11-24 15:25:05"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- EvilAngelStore.yml

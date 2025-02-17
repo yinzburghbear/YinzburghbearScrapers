@@ -1,0 +1,9 @@
+id: RagingStallion
+name: Raging Stallion
+metadata: {}
+version: a5ef7a6
+date: "2024-06-23 12:27:15"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- RagingStallion.yml

@@ -1,0 +1,9 @@
+id: AEBN
+name: AEBN
+metadata: {}
+version: 7b9888c
+date: "2024-09-30 20:24:50"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- AEBN.yml

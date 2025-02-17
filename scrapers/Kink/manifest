@@ -1,0 +1,9 @@
+id: Kink
+name: Kink
+metadata: {}
+version: 6d1d498
+date: "2024-12-13 07:54:09"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- Kink.yml

@@ -1,0 +1,9 @@
+id: HelixStudios
+name: HelixStudios
+metadata: {}
+version: 22d00a3
+date: "2025-02-09 12:19:11"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- HelixStudios.yml

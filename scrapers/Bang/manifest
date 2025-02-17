@@ -1,0 +1,9 @@
+id: Bang
+name: Bang
+metadata: {}
+version: 96365ae
+date: "2024-11-29 21:56:03"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- Bang.yml

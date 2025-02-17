@@ -1,0 +1,9 @@
+id: Waybig
+name: Waybig
+metadata: {}
+version: dcd7cad
+date: "2024-10-15 08:26:56"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- Waybig.yml

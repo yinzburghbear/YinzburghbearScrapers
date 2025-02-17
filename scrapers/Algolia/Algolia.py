@@ -63,6 +63,8 @@ MOVIE_SITES = {
     "3rddegreefilms": "https://www.3rddegreefilms.com/en/movie",
     "lethalhardcore": "https://www.lethalhardcore.com/en/movies",
     "roccosiffredi": "https://www.roccosiffredi.com/en/dvd",
+    # "chaosmen": "https://www.chaosmen.com/en/movie",
+    # "activeduty": "https://www.activeduty.com/en/movie",
 }
 
 # a dict of serie (`serie_name` from the API) which should set the value
@@ -118,7 +120,7 @@ SITES_USING_OVERRIDE_AS_STUDIO_FOR_SCENE = {
 # this is because the `serie_name` is the Movie (series) title on these sites,
 # not the studio
 SITES_USING_SITENAME_AS_STUDIO_FOR_SCENE = [
-    "ChaosMen",
+    # "ChaosMen",
     "Devil's Film",
     "Evil Angel",
     "FalconStudios.com",
@@ -136,6 +138,7 @@ SITES_USING_SITENAME_AS_STUDIO_FOR_SCENE = [
     "Lethalhardcore",
     "Latex Playtime",
     "Wicked",
+    # "ActiveDuty",
 ]
 
 # a list of sites (`sitename_pretty` from the API) which should pick out the

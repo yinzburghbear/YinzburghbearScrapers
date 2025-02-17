@@ -1,0 +1,9 @@
+id: Reddit
+name: Reddit
+metadata: {}
+version: 3c622f8
+date: "2023-12-14 01:22:50"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- Reddit.yml

@@ -1,0 +1,9 @@
+id: PigBoyRuben
+name: PigBoyRuben
+metadata: {}
+version: 032ef1d
+date: "2024-08-01 21:30:50"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- PigBoyRuben.yml

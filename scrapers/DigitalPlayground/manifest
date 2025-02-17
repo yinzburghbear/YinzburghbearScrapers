@@ -1,0 +1,10 @@
+id: DigitalPlayground
+name: Digital Playground
+metadata: {}
+version: 850a79a
+date: "2025-01-15 17:12:04"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- DigitalPlayground.yml
+- DigitalPlayground.py

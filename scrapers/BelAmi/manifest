@@ -1,0 +1,9 @@
+id: BelAmi
+name: BelAmi
+metadata: {}
+version: d31d24e
+date: "2024-01-14 02:27:05"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- BelAmi.yml

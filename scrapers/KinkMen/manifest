@@ -1,0 +1,9 @@
+id: KinkMen
+name: Kink Men
+metadata: {}
+version: ae1ef54
+date: "2024-11-27 05:47:09"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- KinkMen.yml

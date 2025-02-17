@@ -1,0 +1,9 @@
+id: BlurredMedia
+name: BlurredMedia
+metadata: {}
+version: 447d45d
+date: "2024-06-27 22:29:00"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- BlurredMedia.yml

@@ -1,0 +1,9 @@
+id: BoyFun
+name: BoyFun
+metadata: {}
+version: 7dc09fe
+date: "2024-05-23 08:54:25"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- BoyFun.yml

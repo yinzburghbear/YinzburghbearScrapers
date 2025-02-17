@@ -1,0 +1,11 @@
+id: AyloAPI
+name: AyloAPI
+metadata: {}
+version: 91ba5b7
+date: "2024-12-11 01:35:07"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- scrape.py
+- domains.py
+- slugger.py

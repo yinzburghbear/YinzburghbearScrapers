@@ -1,0 +1,59 @@
+Metadata-Version: 2.1
+Name: fastbencode
+Version: 0.3.1
+Summary: Implementation of bencode with optional fast C extensions
+Maintainer-email: Breezy Developers <breezy-core@googlegroups.com>
+License: GPLv2 or later
+Project-URL: Homepage, https://github.com/breezy-team/fastbencode
+Project-URL: GitHub, https://github.com/breezy-team/fastbencode
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: COPYING
+Provides-Extra: cext
+Requires-Dist: cython>=0.29; extra == "cext"
+Provides-Extra: dev
+Requires-Dist: ruff==0.4.3; extra == "dev"
+
+fastbencode
+===========
+
+fastbencode is an implementation of the bencode serialization format originally
+used by BitTorrent.
+
+The package includes both a pure-Python version and an optional C extension
+based on Cython.  Both provide the same functionality, but the C extension
+provides significantly better performance.
+
+Example:
+
+    >>> from fastbencode import bencode, bdecode
+    >>> bencode([1, 2, b'a', {b'd': 3}])
+    b'li1ei2e1:ad1:di3eee'
+    >>> bdecode(bencode([1, 2, b'a', {b'd': 3}]))
+    [1, 2, b'a', {b'd': 3}]
+
+The default ``bencode``/``bdecode`` functions just operate on
+bytestrings. Use ``bencode_utf8`` / ``bdecode_utf8`` to
+serialize/deserialize all plain strings as UTF-8 bytestrings.
+Note that for performance reasons, all dictionary keys still have to be
+bytestrings.
+
+License
+=======
+fastbencode is available under the GNU GPL, version 2 or later.
+
+Copyright
+=========
+
+* Original Pure-Python bencoder (c) Petru Paler
+* Cython version and modifications (c) Canonical Ltd
+* Split out from Bazaar/Breezy by Jelmer Vernooĳ

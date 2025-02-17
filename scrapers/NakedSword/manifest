@@ -1,0 +1,9 @@
+id: NakedSword
+name: NakedSword
+metadata: {}
+version: 14bb291
+date: "2024-04-11 21:40:49"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- NakedSword.yml

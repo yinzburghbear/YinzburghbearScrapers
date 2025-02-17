@@ -1,0 +1,9 @@
+id: IafdStreaming
+name: IafdStreaming
+metadata: {}
+version: 8a93a17
+date: "2020-08-30 19:04:12"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- IafdStreaming.yml

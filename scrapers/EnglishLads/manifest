@@ -1,0 +1,9 @@
+id: EnglishLads
+name: English Lads
+metadata: {}
+version: ebfd2b2
+date: "2023-10-03 12:25:35"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- EnglishLads.yml

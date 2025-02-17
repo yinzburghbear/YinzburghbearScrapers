@@ -1,0 +1,10 @@
+id: MetroHD
+name: Metro HD
+metadata: {}
+version: 64a5a66
+date: "2024-02-16 23:32:51"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- MetroHD.py
+- MetroHD.yml

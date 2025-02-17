@@ -1,0 +1,9 @@
+id: AdultSiteRunner
+name: AdultSiteRunner
+metadata: {}
+version: 2e7f456
+date: "2024-12-07 02:33:57"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- AdultSiteRunner.yml

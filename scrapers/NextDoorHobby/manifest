@@ -1,0 +1,10 @@
+id: NextDoorHobby
+name: NextDoorHobby
+metadata: {}
+version: f5d9cee
+date: "2024-08-06 00:03:33"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- NextDoorHobby.py
+- NextDoorHobby.yml

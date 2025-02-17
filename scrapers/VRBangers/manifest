@@ -1,0 +1,9 @@
+id: VRBangers
+name: VRBangers
+metadata: {}
+version: 799c1f2
+date: "2024-11-29 01:44:22"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- VRBangers.yml

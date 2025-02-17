@@ -1,0 +1,9 @@
+id: NextDoorStudios
+name: Next Door Studios
+metadata: {}
+version: 97bec71
+date: "2023-11-22 00:53:44"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- NextDoorStudios.yml
