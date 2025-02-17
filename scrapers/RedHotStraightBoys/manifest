@@ -1,9 +1,0 @@
-id: RedHotStraightBoys
-name: RedHotStraightBoys
-metadata: {}
-version: 54eeae7
-date: "2023-10-14 20:49:27"
-requires: []
-source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
-files:
-- RedHotStraightBoys.yml

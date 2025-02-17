@@ -1,9 +1,0 @@
-id: BluMedia
-name: BluMedia Network
-metadata: {}
-version: 48b6ecf
-date: "2023-10-02 13:51:30"
-requires: []
-source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
-files:
-- BluMedia.yml

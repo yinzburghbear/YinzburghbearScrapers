@@ -1,9 +1,0 @@
-id: GuysInSweatpants
-name: Guys In Sweatpants
-metadata: {}
-version: cf2fe31
-date: "2023-09-29 03:39:31"
-requires: []
-source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
-files:
-- GuysInSweatpants.yml

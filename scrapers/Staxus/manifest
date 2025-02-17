@@ -1,9 +1,0 @@
-id: Staxus
-name: Staxus
-metadata: {}
-version: 3f7a474
-date: "2024-12-14 16:54:11"
-requires: []
-source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
-files:
-- Staxus.yml

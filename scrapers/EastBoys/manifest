@@ -1,9 +1,0 @@
-id: EastBoys
-name: EastBoys
-metadata: {}
-version: b061b00
-date: "2022-03-18 19:32:00"
-requires: []
-source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
-files:
-- EastBoys.yml

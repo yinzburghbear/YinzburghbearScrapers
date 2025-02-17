@@ -1,9 +1,0 @@
-id: Johnnyrapid
-name: Johnny Rapid
-metadata: {}
-version: 97bec71
-date: "2023-11-22 00:53:44"
-requires: []
-source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
-files:
-- Johnnyrapid.yml

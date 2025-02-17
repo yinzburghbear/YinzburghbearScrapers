@@ -1,9 +1,0 @@
-id: BreedItRaw
-name: BreedItRaw
-metadata: {}
-version: 0658f73
-date: "2023-01-16 00:03:52"
-requires: []
-source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
-files:
-- BreedItRaw.yml

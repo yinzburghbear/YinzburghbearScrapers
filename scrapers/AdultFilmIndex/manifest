@@ -1,9 +1,0 @@
-id: AdultFilmIndex
-name: AdultFilmIndex
-metadata: {}
-version: 4fa3e09
-date: "2024-04-25 12:01:21"
-requires: []
-source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
-files:
-- AdultFilmIndex.yml

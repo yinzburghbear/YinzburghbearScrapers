@@ -1,9 +1,0 @@
-id: SpunkWorthy
-name: SpunkWorthy
-metadata: {}
-version: 1a4717a
-date: "2023-10-01 23:31:32"
-requires: []
-source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
-files:
-- SpunkWorthy.yml

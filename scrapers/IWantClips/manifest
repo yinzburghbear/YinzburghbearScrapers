@@ -1,9 +1,0 @@
-id: IWantClips
-name: IWantClips
-metadata: {}
-version: ede6d24
-date: "2024-11-14 19:25:58"
-requires: []
-source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
-files:
-- IWantClips.yml

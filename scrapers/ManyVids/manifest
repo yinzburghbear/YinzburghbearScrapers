@@ -1,9 +1,0 @@
-id: ManyVids
-name: ManyVids
-metadata: {}
-version: c42f3a4
-date: "2024-10-27 06:59:08"
-requires: []
-source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
-files:
-- ManyVids.yml

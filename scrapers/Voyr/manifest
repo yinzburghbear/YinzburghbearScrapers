@@ -1,9 +1,0 @@
-id: Voyr
-name: Voyr
-metadata: {}
-version: c2abfdf
-date: "2024-02-03 17:45:33"
-requires: []
-source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
-files:
-- Voyr.yml

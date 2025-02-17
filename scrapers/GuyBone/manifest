@@ -1,9 +1,0 @@
-id: GuyBone
-name: GuyBone
-metadata: {}
-version: db01056
-date: "2024-06-23 12:22:53"
-requires: []
-source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
-files:
-- GuyBone.yml

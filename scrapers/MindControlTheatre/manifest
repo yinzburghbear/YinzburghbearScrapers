@@ -1,9 +1,0 @@
-id: MindControlTheatre
-name: Mind Control Theatre
-metadata: {}
-version: 7d66a88
-date: "2024-08-07 20:50:46"
-requires: []
-source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
-files:
-- MindControlTheatre.yml

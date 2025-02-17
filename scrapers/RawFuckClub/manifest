@@ -1,9 +1,0 @@
-id: RawFuckClub
-name: Raw Fuck Club
-metadata: {}
-version: f180aae
-date: "2024-06-04 10:04:26"
-requires: []
-source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
-files:
-- RawFuckClub.yml

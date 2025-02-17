@@ -1,9 +1,0 @@
-id: kinkyfamily
-name: kinkyfamily
-metadata: {}
-version: 5a12b4e
-date: "2022-02-20 17:19:24"
-requires: []
-source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
-files:
-- kinkyfamily.yml

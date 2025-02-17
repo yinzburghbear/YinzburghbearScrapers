@@ -1,9 +1,0 @@
-id: PaperStreetMedia
-name: PaperStreetMedia
-metadata: {}
-version: 86c79e5
-date: "2024-09-27 22:09:00"
-requires: []
-source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
-files:
-- PaperStreetMedia.yml

@@ -1,9 +1,0 @@
-id: Private
-name: private
-metadata: {}
-version: a26a724
-date: "2024-09-05 19:39:40"
-requires: []
-source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
-files:
-- Private.yml

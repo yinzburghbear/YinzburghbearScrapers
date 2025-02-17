@@ -1,9 +1,0 @@
-id: FalconStudios
-name: Falcon Studios
-metadata: {}
-version: 5298a05
-date: "2024-05-09 11:35:27"
-requires: []
-source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
-files:
-- FalconStudios.yml

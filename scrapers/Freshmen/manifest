@@ -1,9 +1,0 @@
-id: Freshmen
-name: Freshmen
-metadata: {}
-version: db61251
-date: "2024-10-01 07:24:32"
-requires: []
-source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
-files:
-- Freshmen.yml

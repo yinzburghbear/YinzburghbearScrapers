@@ -1,9 +1,0 @@
-id: czechcasting
-name: czechcasting
-metadata: {}
-version: e09152a
-date: "2020-12-30 17:09:55"
-requires: []
-source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
-files:
-- czechcasting.yml
