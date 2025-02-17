@@ -28,6 +28,8 @@ studio_map = {
     "cougarseason.com": "Cougar Season",
     "creampiethais.com": "Creampie Thais",
     "deepthroatsirens.com": "Deepthroat Sirens",
+    "dickhddaily.com": "DickHDDaily",
+    "diredesires.com": "Dire Desires",
     "dirtyauditions.com": "Dirty Auditions",
     "divine-dd.com": "Divine-DD",
     "facialsforever.com": "Facials Forever",
@@ -49,9 +51,11 @@ studio_map = {
     "meanfeetfetish.com": "Mean Feet Fetish",
     "members.hobybuchanon.com": "Hoby Buchanon",
     "mongerinasia.com": "Monger In Asia",
+    "nickmarxx.com": "Nick Marxx",
     "nylonperv.com": "Nylon Perv",
     "nympho.com": "Nympho",
     "poundedpetite.com": "Pounded Petite",
+    "povperv.com": "POV Perv",
     "premium-nickmarxx.com": "Nick Marxx",
     "red-xxx.com": "Red-XXX",
     "rickysroom.com": "Ricky's Room",
@@ -64,6 +68,7 @@ studio_map = {
     "swallowed.com": "Swallowed",
     "thaigirlswild.com": "Thai Girls Wild",
     "topwebmodels.com": "Top Web Models",
+    "topwebmodels-interviews.com": "TWM Interviews",
     "trueanal.com": "True Anal",
     "twmclassics.com": "TWM Classics",
     "xful.com": "Xful",
@@ -74,6 +79,14 @@ studio_map = {
 }
 
 
+def feetinches_to_cm(feet, inches):
+    return str(round((float(feet) * 12 + float(inches)) * 2.54))
+
+
+def lbs_to_kg(lbs):
+    return str(round(float(lbs) / 2.2046))
+
+
 def clean_url(url: str) -> str:
     # remove any query parameters
     return re.sub(r"\?.*", "", url)
@@ -82,6 +95,7 @@ def clean_url(url: str) -> str:
 # Some sites only work with the `tour.` subdomain
 def fix_url(url: str) -> str:
     url = url.replace("twmclassics.com", "topwebmodels.com")
+    url = url.replace("topwebmodels-interviews.com", "topwebmodels.com")
     url = url.replace("suckthisdick.com", "hobybuchanon.com")
     url = url.replace("premium-nickmarxx.com", "nickmarxx.com")
     url = url.replace("api.nyseedxxx.com", "nyseedxxx.com")
@@ -165,8 +179,8 @@ def get_studio(site: str) -> ScrapedStudio:
 
 def to_scraped_performer(raw_performer: dict) -> ScrapedPerformer:
     # Convert dict keys to lower case because, of couse, they can come in differently depending on studio.
-    raw_performer = {key.lower():value for key,value in raw_performer.items()}
-    
+    raw_performer = {key.lower(): value for key, value in raw_performer.items()}
+
     # Studios that do not use units for measurements, but are obviously not metric.
     STUDIO_USES_IMPERIAL = [
         "joeschmoevideos.com",
@@ -176,15 +190,17 @@ def to_scraped_performer(raw_performer: dict) -> ScrapedPerformer:
     performer: ScrapedPerformer = {
         "name": raw_performer["name"],
         "gender": raw_performer["gender"],
-        "url": make_performer_url(raw_performer["slug"], raw_performer["site_domain"]),
+        "urls": [
+            make_performer_url(raw_performer["slug"], raw_performer["site_domain"])
+        ],
         "tags": [],
     }
 
     if image := raw_performer.get("thumb"):
-        performer["image"] = image
+        performer["images"] = [image]
     elif image := raw_performer.get("thumbnail"):
-        image = re.sub(r'^//','https://',image)
-        performer["image"] = image
+        image = re.sub(r"^//", "https://", image)
+        performer["images"] = [image]
 
     if bio := raw_performer.get("bio"):
         performer["details"] = strip_tags(bio)
@@ -206,7 +222,7 @@ def to_scraped_performer(raw_performer: dict) -> ScrapedPerformer:
     if (height_ft := raw_performer.get("height")) and (
         h := re.match(r"(\d+)\D+(\d+).+", height_ft)
     ):
-        height_cm = feetinches_to_cm(h.group(1),h.group(2))
+        height_cm = feetinches_to_cm(h.group(1), h.group(2))
         performer["height"] = str(height_cm)
     elif (height_m := raw_performer.get("height")) and (
         h := re.match(r"^(\d\.\d\d)$", height_m)
@@ -231,12 +247,20 @@ def to_scraped_performer(raw_performer: dict) -> ScrapedPerformer:
     elif (weight_nounits := raw_performer.get("weight")) and (
         w := re.match(r"^([\d\.]+)$", weight_nounits)
     ):
-        performer["weight"] = lbs_to_kg(w.group(1)) if raw_performer["site_domain"] in STUDIO_USES_IMPERIAL else str(w.group(1))
+        performer["weight"] = (
+            lbs_to_kg(w.group(1))
+            if raw_performer["site_domain"] in STUDIO_USES_IMPERIAL
+            else str(w.group(1))
+        )
 
-    if (penis_nounits:= raw_performer.get("dick size")) and (
+    if (penis_nounits := raw_performer.get("dick size")) and (
         s := re.match(r"^([\d\.]+)$", penis_nounits)
     ):
-        performer["penis_length"] = feetinches_to_cm(0,s.group(1)) if raw_performer["site_domain"] in STUDIO_USES_IMPERIAL else str(s.group(1))
+        performer["penis_length"] = (
+            feetinches_to_cm(0, s.group(1))
+            if raw_performer["site_domain"] in STUDIO_USES_IMPERIAL
+            else str(s.group(1))
+        )
 
     if circumcised := raw_performer.get("cut / uncut"):
         performer["circumcised"] = circumcised.capitalize()
@@ -306,7 +330,7 @@ def to_scraped_scene_from_content(raw_scene: dict) -> ScrapedScene:
             {
                 "name": x["name"],
                 "image": x["thumb"],
-                "url": make_performer_url(x["slug"], site),
+                "urls": [make_performer_url(x["slug"], site)],
             }
             for x in models
         ]
@@ -315,6 +339,7 @@ def to_scraped_scene_from_content(raw_scene: dict) -> ScrapedScene:
 
     scene["studio"] = get_studio(site)
 
+    # trailer seems to give the best quality image (2024/08/28)
     # trailer_screencap is what's shown on most sites
     # extra_thumbnails has the best sizes and in most cases the first one is the same as thumb
     # thumb is a good fallback if extra_thumbnails is not available
@@ -322,6 +347,7 @@ def to_scraped_scene_from_content(raw_scene: dict) -> ScrapedScene:
     cover_candidates = filter(
         None,
         (
+            dig(raw_scene, "trailer"),
             dig(raw_scene, "poster_url"),
             dig(raw_scene, "trailer_screencap"),
             dig(raw_scene, "extra_thumbnails", 0),
@@ -399,14 +425,6 @@ def scrape_performer(url: str) -> ScrapedPerformer | None:
     return to_scraped_performer(props["model"])
 
 
-def feetinches_to_cm(feet,inches):
-    return(str(round((float(feet) * 12 + float(inches)) * 2.54)))
-
-
-def lbs_to_kg(lbs):
-    return(str(round(float(lbs) / 2.2046)))
-
-
 if __name__ == "__main__":
     op, args = scraper_args()
 
@@ -421,4 +439,5 @@ if __name__ == "__main__":
             sys.exit(1)
 
     result = replace_all(result, "url", fix_url)  # type: ignore
+    result = replace_all(result, "urls", fix_url)  # type: ignore
     print(json.dumps(result))

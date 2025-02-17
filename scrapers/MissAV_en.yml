@@ -6,7 +6,7 @@ sceneByURL:
     scraper: sceneScraper
 sceneByName:
   action: scrapeXPath
-  queryURL: https://missav.com/en/search/{}
+  queryURL: https://missav.ai/en/search/{}
   scraper: sceneSearch
 sceneByQueryFragment:
   action: scrapeXPath
@@ -26,7 +26,7 @@ xPathScrapers:
   sceneScraper:
     scene:
       Code: //span[text()='Code:']/../span[@class="font-medium"]
-      Date: //span[text()='Release date:']/../span[@class="font-medium"]
+      Date: //span[text()='Release date:']/../time[@class="font-medium"]
       Title:
         selector: //h1[@class="text-base lg:text-lg text-nord6"]
         postProcess:

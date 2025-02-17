@@ -1,13 +1,15 @@
 from argparse import ArgumentParser
 from functools import reduce
-from typing import Any, Callable, TypeVar
+from typing import Any, Callable, Iterable, Mapping, TypeVar
 from urllib.error import URLError
 from urllib.request import Request, urlopen
 import json
 import sys
 
 
-def dig(c: dict | list, *keys: str | int | tuple[str | int, ...], default=None) -> Any:
+def dig(
+    c: Mapping | Iterable, *keys: str | int | tuple[str | int, ...], default=None
+) -> Any:
     """
     Helper function to get a value from a nested dict or list
 
@@ -31,7 +33,7 @@ def dig(c: dict | list, *keys: str | int | tuple[str | int, ...], default=None) 
                 for k in key:
                     if k in d:
                         return d[k]
-            return d.get(key)
+            return d.get(key, default)
         elif isinstance(d, list) and isinstance(key, int) and key < len(d):
             return d[key]
         else:
@@ -672,5 +674,6 @@ demonyms = {
     "zambian": "Zambia",
     "zimbabwean": "Zimbabwe",
     "åland island": "Åland Islands",
+    "united states": "USA",
     **{s.lower(): "USA" for s in US_states},
 }

@@ -6,6 +6,7 @@ from py_common import log
 from py_common.util import dig, replace_all, replace_at
 from AyloAPI.scrape import (
     gallery_from_url,
+    gallery_from_fragment,
     scraper_args,
     scene_from_url,
     scene_search,
@@ -19,11 +20,17 @@ from AyloAPI.scrape import (
 studio_map = {
     "AvaSpice": "Ava Spice",
     "MomIsHorny": "Mom Is Horny",
+    "Dad's Love Porn": "Dads Love Porn",
+}
+
+studio_domains = {
+    "Sex Selector": "www.sexselector.com",
+    "Virtual Porn": "virtualporn.com",
 }
 
 
 def redirect(url: str) -> str:
-    if not url or "/video/" not in url:
+    if not url or "/video" not in url:
         return url
     if (res := head(url)) and (redirect := res.headers.get("Location", url)):
         return redirect if not redirect.endswith("404") else url
@@ -31,18 +38,24 @@ def redirect(url: str) -> str:
 
 
 def bangbros(obj: Any, _) -> Any:
-    domain = (
-        "virtualporn.com"
-        if dig(obj, "studio", "name") == "Virtual Porn"
-        else "bangbros.com"
-    )
+    domain = studio_domains.get(dig(obj, "studio", "name"), "bangbros.com")
+
+    def urlfixer(x):
+        if domain == "www.sexselector.com":
+            return x.replace("www.bangbros.com", domain)
+        return x.replace("/scene/", "/video/").replace("www.bangbros.com", domain)
 
     # All bangbros URLs omit the standard www. subdomain prefix
     # and all scene URLs use /video/ instead of the standard /scene/
     fixed = replace_all(
         obj,
         "url",
-        lambda x: x.replace("/scene/", "/video/").replace("www.bangbros.com", domain),
+        urlfixer,
+    )
+    fixed = replace_all(
+        fixed,
+        "urls",
+        urlfixer,
     )
 
     # Rename certain studios according to the map
@@ -56,15 +69,21 @@ def bangbros(obj: Any, _) -> Any:
 if __name__ == "__main__":
     domains = [
         "bangbros",
+        "sexselector",
         "virtualporn",
     ]
     op, args = scraper_args()
     result = None
 
     match op, args:
-        case "gallery-by-url" | "gallery-by-fragment", {"url": url} if url:
+        case "gallery-by-url", {"url": url} if url:
             url = redirect(url)
             result = gallery_from_url(url, postprocess=bangbros)
+        case "gallery-by-fragment":
+            fixed = replace_all(args, "url", redirect)
+            result = gallery_from_fragment(
+                fixed, search_domains=domains, postprocess=bangbros
+            )
         case "scene-by-url", {"url": url} if url:
             url = redirect(url)
             result = scene_from_url(url, postprocess=bangbros)

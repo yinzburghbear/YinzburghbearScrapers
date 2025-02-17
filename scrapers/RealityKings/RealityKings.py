@@ -5,6 +5,7 @@ from py_common import log
 from py_common.util import dig, replace_all, replace_at
 from AyloAPI.scrape import (
     gallery_from_url,
+    gallery_from_fragment,
     scraper_args,
     scene_from_url,
     scene_search,
@@ -38,6 +39,11 @@ def rk(obj: Any, _) -> Any:
         "url",
         lambda x: x.replace("realitykings.com", domain),
     )
+    fixed = replace_all(
+        fixed,
+        "urls",
+        lambda x: x.replace("realitykings.com", domain),
+    )
 
     return fixed
 
@@ -51,8 +57,10 @@ if __name__ == "__main__":
     result = None
 
     match op, args:
-        case "gallery-by-url" | "gallery-by-fragment", {"url": url} if url:
+        case "gallery-by-url", {"url": url} if url:
             result = gallery_from_url(url, postprocess=rk)
+        case "gallery-by-fragment", args:
+            result = gallery_from_fragment(args, search_domains=domains, postprocess=rk)
         case "scene-by-url", {"url": url} if url:
             result = scene_from_url(url, postprocess=rk)
         case "scene-by-name", {"name": name} if name:

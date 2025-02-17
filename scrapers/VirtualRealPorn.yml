@@ -1,16 +1,12 @@
-# yaml-language-server: $schema=../validator/scraper.schema.json
-
-name: "VirtualRealPorn"
+name: VirtualRealPorn
 
 sceneByURL:
   - action: scrapeXPath
     url: &urlSel
-      - virtualrealamateurporn.com
-      - virtualrealgay.com
-      - virtualrealjapan.com
-      - virtualrealpassion.com
-      - virtualrealporn.com
-      - virtualrealtrans.com
+      - virtualrealamateurporn.com/vr-amateur-porn-video/
+      - virtualrealjapan.com/vr-japanese-video/
+      - virtualrealpassion.com/vr-female-pov-porn-video/
+      - virtualrealporn.com/vr-porn-video/
     scraper: sceneScraper
 
 sceneByFragment:
@@ -44,7 +40,9 @@ movieByURL:
 
 performerByURL:
   - action: scrapeXPath
-    url: *urlSel
+    url:
+      - virtualrealpassion.com/vr-models/
+      - virtualrealporn.com/vr-models/
     scraper: performerScraper
 
 xPathScrapers:
@@ -96,6 +94,12 @@ xPathScrapers:
                 VirtualRealAmateurPorn: "VirtualRealAmateur"
       Image: &imageSel //meta[@property="og:image"]/@content
       URL: //link[@rel="canonical"]/@href
+      Code: 
+        selector: //link[@rel="shortlink"]/@href
+        postProcess:
+          - replace:
+            - regex: ^https://.*/\?p=
+              with:
       # Movies:
       #   Name:
       #     selector: //meta[@property="og:site_name"]/@content|//h1[@class="titleVideo"]
@@ -119,8 +123,8 @@ xPathScrapers:
         selector: //div[@class="head_model"]//h1/text()
         postProcess:
           - replace:
-              - regex: ' +$'
-                with: ''
+              - regex: \s+$
+                with: ""
       Gender:
         selector: //section[@id="about"]//tr/th[text()="Gender"]//following-sibling::td/text()
         postProcess:
@@ -142,7 +146,7 @@ xPathScrapers:
       EyeColor: //section[@id="about"]//tr/th[text()="Eyes color"]//following-sibling::td/text()
       Measurements:
         selector: //section[@id="about"]//tr/th[text()="Bust"]//following-sibling::td/text()|//section[@id="about"]//tr/th[text()="Waist"]//following-sibling::td/text()|//section[@id="about"]//tr/th[text()="Hips"]//following-sibling::td/text()
-        concat: '-'
+        concat: "-"
         postProcess:
           - javascript: |
               // convert from metric to imperial
@@ -153,4 +157,4 @@ xPathScrapers:
               }
               return value
       Image: //div[@class="feature_img_model"]/img/@src
-# Last Updated June 26, 2024
+# Last Updated August 21, 2024

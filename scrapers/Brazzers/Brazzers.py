@@ -5,6 +5,7 @@ from py_common import log
 from py_common.util import dig, replace_all, replace_at
 from AyloAPI.scrape import (
     gallery_from_url,
+    gallery_from_fragment,
     scraper_args,
     scene_from_url,
     scene_search,
@@ -18,16 +19,29 @@ from AyloAPI.scrape import (
 studio_map = {
     "JugFuckers": "Jug Fuckers",
     "Shes Gonna Squirt": "She's Gonna Squirt",
+    "zzvr": "Brazzers VR",
 }
 
 
-def bangbros(obj: Any, _) -> Any:
+def brazzers(obj: Any, api_result: Any) -> Any:
+    # Brazzers still hosts all of their VR content on a separate domain
+    domain = "brazzersvr.com" if dig(api_result, "isVR") else "brazzers.com"
+
     # All brazzers URLs use /video/ instead of the standard /scene/
     # and /pornstar/ instead of the standard /model
     fixed = replace_all(
         obj,
         "url",
-        lambda x: x.replace("/scene/", "/video/").replace("/model/", "/pornstar/"),
+        lambda x: x.replace("/scene/", "/video/")
+        .replace("/model/", "/pornstar/")
+        .replace("brazzers.com", domain),
+    )
+    fixed = replace_all(
+        fixed,
+        "urls",
+        lambda x: x.replace("/scene/", "/video/")
+        .replace("/model/", "/pornstar/")
+        .replace("brazzers.com", domain),
     )
 
     # Rename certain studios according to the map
@@ -45,33 +59,35 @@ def bangbros(obj: Any, _) -> Any:
 
 
 if __name__ == "__main__":
-    domains = [
-        "brazzers",
-    ]
+    domains = ["brazzers", "brazzersvr"]
     op, args = scraper_args()
     result = None
 
     match op, args:
-        case "gallery-by-url" | "gallery-by-fragment", {"url": url} if url:
-            result = gallery_from_url(url, postprocess=bangbros)
+        case "gallery-by-url", {"url": url} if url:
+            result = gallery_from_url(url, postprocess=brazzers)
+        case "gallery-by-fragment":
+            result = gallery_from_fragment(
+                args, search_domains=domains, postprocess=brazzers
+            )
         case "scene-by-url", {"url": url} if url:
-            result = scene_from_url(url, postprocess=bangbros)
+            result = scene_from_url(url, postprocess=brazzers)
         case "scene-by-name", {"name": name} if name:
-            result = scene_search(name, search_domains=domains, postprocess=bangbros)
+            result = scene_search(name, search_domains=domains, postprocess=brazzers)
         case "scene-by-fragment" | "scene-by-query-fragment", args:
             result = scene_from_fragment(
-                args, search_domains=domains, postprocess=bangbros
+                args, search_domains=domains, postprocess=brazzers
             )
         case "performer-by-url", {"url": url}:
-            result = performer_from_url(url, postprocess=bangbros)
+            result = performer_from_url(url, postprocess=brazzers)
         case "performer-by-fragment", args:
             result = performer_from_fragment(args)
         case "performer-by-name", {"name": name} if name:
             result = performer_search(
-                name, search_domains=domains, postprocess=bangbros
+                name, search_domains=domains, postprocess=brazzers
             )
         case "movie-by-url", {"url": url} if url:
-            result = movie_from_url(url, postprocess=bangbros)
+            result = movie_from_url(url, postprocess=brazzers)
         case _:
             log.error(f"Operation: {op}, arguments: {json.dumps(args)}")
             sys.exit(1)
