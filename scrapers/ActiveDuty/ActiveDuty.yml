@@ -1,5 +1,5 @@
 # requires: Algolia
-name: Active Duty
+name: "Active Duty"
 sceneByURL:
   - action: script
     url:
@@ -28,23 +28,4 @@ sceneByQueryFragment:
     - ../Algolia/Algolia.py
     - activeduty
     - validName
-movieByURL:
-  - action: script
-    url:
-      - activeduty.com/en/movie/
-    script:
-      - python
-      - ../Algolia/Algolia.py
-      - activeduty
-      - movie
-performerByURL:
-  - action: script 
-    url:
-      - activeduty.com/en/pornstar
-    script:
-      - python
-      - ../Algolia/Algolia.py
-      - activeduty
-      - pornstar
-  
-  # Last Updated 2/16/2025
+# Last Updated September 26, 2023
