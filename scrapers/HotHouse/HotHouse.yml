@@ -1,50 +1,50 @@
 # requires: Algolia
-name: Active Duty
+name: Hot House
 sceneByURL:
   - action: script
     url:
-      - activeduty.com/en/video
+      - hothouse.com/en/video
     script:
       - python
       - ../Algolia/Algolia.py
-      - activeduty
+      - hothouse
 sceneByFragment:
   action: script
   script:
     - python
     - ../Algolia/Algolia.py
-    - activeduty
+    - hothouse
 sceneByName:
   action: script
   script:
     - python
     - ../Algolia/Algolia.py
-    - activeduty
+    - hothouse
     - searchName
 sceneByQueryFragment:
   action: script
   script:
     - python
     - ../Algolia/Algolia.py
-    - activeduty
+    - hothouse
     - validName
 movieByURL:
   - action: script
     url:
-      - activeduty.com/en/movie/
+      - hothouse.com/en/movie/
     script:
       - python
       - ../Algolia/Algolia.py
-      - activeduty
+      - hothouse
       - movie
 performerByURL:
   - action: script 
     url:
-      - activeduty.com/en/pornstar
+      - hothouse.com/en/pornstar
     script:
       - python
       - ../Algolia/Algolia.py
-      - activeduty
+      - hothouse
       - pornstar
-  
-  # Last Updated 2/16/2025
+
+# Last Updated April 09, 2023

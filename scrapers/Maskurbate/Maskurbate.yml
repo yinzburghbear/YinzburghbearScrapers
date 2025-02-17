@@ -1,0 +1,31 @@
+# requires: Algolia
+name: "Maskurbate"
+sceneByURL:
+  - action: script
+    url:
+      - maskurbate.com/en/video
+    script:
+      - python
+      - ../Algolia/Algolia.py
+      - maskurbate
+sceneByFragment:
+  action: script
+  script:
+    - python
+    - ../Algolia/Algolia.py
+    - maskurbate
+sceneByName:
+  action: script
+  script:
+    - python
+    - ../Algolia/Algolia.py
+    - maskurbate
+    - searchName
+sceneByQueryFragment:
+  action: script
+  script:
+    - python
+    - ../Algolia/Algolia.py
+    - maskurbate
+    - validName
+# Last Updated February 15, 2025

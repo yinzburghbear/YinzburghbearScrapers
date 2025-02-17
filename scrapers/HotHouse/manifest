@@ -1,0 +1,9 @@
+id: HotHouse
+name: Hot House
+metadata: {}
+version: 03d7b6f
+date: "2024-04-11 21:41:59"
+requires: []
+source_repository: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+files:
+- HotHouse.yml
